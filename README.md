@@ -15,51 +15,85 @@ The PackagePatrol is a Python tool designed to automate the process of checking,
 ## Prerequisites
 
 - Python 3.7 or later
-- GitHub account and a classic [personal access token](https://github.com/settings/tokens/) with appropriate permissions and the following scopes:
+- A GitHub account and a classic [personal access token](https://github.com/settings/tokens/) with the following scopes:
   - repo (all)
   - read:org
 
 ## Installation
 
-1. Clone the repository:
+You can easily install PackagePatrol using pip, the Python package installer:
 
-   ```sh
-   git clone https://github.com/jan890/PackagePatrol.git
-   cd PackagePatrol
-   ```
+```sh
+pip install PackagePatrol
+```
 
-2. Install the required packages:
-
-   ```sh
-   pip install -r requirements.txt
-   ```
+This command will download and install PackagePatrol along with its dependencies.
 
 ## Configuration
 
-- **GitHub Token**: Create a GitHub personal access token with repo and workflow permissions. Store this token securely as it grants access to your repositories.
-- **Repositories List**: Define the list of repositories you want to check and update. This should be a list of repository names in the format username/repo_name.
+Before using PackagePatrol, you need to set up the following:
+
+- **GitHub Token**: Create a GitHub personal access token with repo and workflow permissions. This token grants access to your repositories.
+- **Repositories List**: Define the list of repositories you want to check and update. This should be a list of repository names in the format `username/repo_name`.
 
 ## Usage
 
-1. Initialize the PackagePatrol:
+Here are two examples of how you can use PackagePatrol:
 
-   ```python
-   from PackagePatrol import DependencyChecker
+### Example 1: Basic Usage
 
-   github_token = "your_github_token"
-   repositories = [
-       "username/repo1",
-       "username/repo2"
-   ]
+```python
+from PackagePatrol import DependencyChecker
 
-   checker = DependencyChecker(github_token, repositories)
-   ```
+# Configure your GitHub token and repositories to check
+github_token = "your_github_token"
+repositories = [
+    "username/repo1",
+    "username/repo2"
+]
 
-2. Run the Checker:
+# Initialize the DependencyChecker
+checker = DependencyChecker(github_token, repositories)
 
-   ```python
-   checker.check()
-   ```
+# Run the check
+checker.check()
+```
+
+### Example 2: Using Environment Variables
+
+You can also use environment variables to protect sensitive information:
+
+```python
+import os
+from PackagePatrol import DependencyChecker
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Get the GitHub token from environment variables
+github_token = os.environ.get("GITHUB_TOKEN")
+
+# Define the repositories to check
+repositories = [
+    "username/repo1",
+    "username/repo2",
+]
+
+# Initialize the DependencyChecker
+checker = DependencyChecker(github_token, repositories)
+
+# Run the check
+checker.check()
+```
+
+Make sure you have a `.env` file in the same directory as your script, containing your GitHub token:
+
+```
+GITHUB_TOKEN=your_github_token_here
+```
+
+**Note:** Replace `"your_github_token"` and `"username/repo"` with your actual values.
 
 ## Workflow
 
