@@ -1,0 +1,10 @@
+.env.local
+local_example.py
+/venv
+/__pycache__
+/dependency_checker.egg-info
+/.pytest_cache
+/.vscode
+/dist
+/build
+/PackagePatrol.egg-info
