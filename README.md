@@ -1,5 +1,7 @@
 # PackagePatrol
 
+[![Upload Python Package](https://github.com/jan890/PackagePatrol/actions/workflows/python-publish.yml/badge.svg)](https://github.com/jan890/PackagePatrol/actions/workflows/python-publish.yml)
+
 ## Overview
 
 The PackagePatrol is a Python tool designed to automate the process of checking, updating, and managing dependencies in GitHub repositories. It streamlines the process of ensuring that all dependencies are up-to-date, which helps maintain the security and stability of your projects.
@@ -21,7 +23,7 @@ The PackagePatrol is a Python tool designed to automate the process of checking,
 
 ## Installation
 
-You can easily install PackagePatrol using pip, the Python package installer:
+You can easily install [PackagePatrol](https://pypi.org/project/PackagePatrol/) using pip, the Python package installer:
 
 ```sh
 pip install PackagePatrol
@@ -114,4 +116,4 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the [MIT License](https://github.com/jan890/PackagePatrol/blob/main/LICENSE). See the LICENSE file for details.
